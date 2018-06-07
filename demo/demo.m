@@ -9,7 +9,7 @@
    
     ds.name = 'evening';
     ds.imageSkip = 1;     % use every n-nth image
-    ds.imagePath = 'quit../dataset/UofA_dataset/day_evening/evening'; 
+    ds.imagePath = '../dataset/UofA_dataset/day_evening/evening'; 
     ds.imageIndices = 1:ds.imageSkip:645;     
     ds.numberFormat = 1;
     ds.prefix='';
@@ -37,7 +37,7 @@
 
     % 
     ds.name = 'day';
-    ds.imagePath = '../../datasets/UofA_dataset/day_evening/day';   
+    ds.imagePath = '../dataset/UofA_dataset/day_evening/day';   
     %ds.imageIndices = 1:ds.imageSkip:1640;     
           
     ds.saveFile = sprintf('%s-%d-%d-%d', ds.name, ds.imageIndices(1), ds.imageSkip, ds.imageIndices(end));
@@ -49,7 +49,8 @@
     params.dataset(1) = spring;
     params.dataset(2) = winter;
 
-    
+    params.target_precision = 0.01
+    params.K = 2
     
     % where to save / load the results
     params.savePath='results';
@@ -58,7 +59,7 @@
 %% now process the dataset
    
     results = openSeqSLAM(params);      
-    timeSpent = toc;
+    results.timeSpent = toc;
     
 %% show some results
     
