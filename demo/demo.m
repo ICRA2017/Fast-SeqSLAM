@@ -9,7 +9,7 @@
    
     ds.name = 'evening';
     ds.imageSkip = 1;     % use every n-nth image
-    ds.imagePath = '../../datasets/UofA_dataset/day_evening/evening'; 
+    ds.imagePath = 'quit../dataset/UofA_dataset/day_evening/evening'; 
     ds.imageIndices = 1:ds.imageSkip:645;     
     ds.numberFormat = 1;
     ds.prefix='';
